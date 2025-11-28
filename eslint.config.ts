@@ -13,7 +13,7 @@ import { configs as tseslint } from "typescript-eslint";
 
 export default defineConfigWithVueTs(
 	{
-		ignores: ["**/*.d.ts", "dist", "node_modules", "src/shared/api/dit", "prettier.config.js"],
+		ignores: ["**/*.d.ts", "dist", "node_modules", "src/shared/api/dit"],
 	},
 	{ files: ["**/*.{js,mjs,cjs,ts,vue}"] },
 	tseslint.all,
@@ -48,6 +48,7 @@ export default defineConfigWithVueTs(
 			"unicorn/prefer-at": ["error", { checkAllIndexAccess: true }],
 			"unicorn/prefer-ternary": "off",
 			"unicorn/prevent-abbreviations": "off",
+			"vue/multi-word-component-names": "warn",
 		},
 		settings: {
 			"import/resolver": {
