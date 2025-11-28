@@ -10,7 +10,13 @@
     "lint": "eslint . --quiet",
     "lint:fix": "eslint . --fix",
     "stylelint": "stylelint \"**/*.{css,scss,vue}\" --quiet",
-    "stylelint:fix": "stylelint \"**/*.{css,scss,vue}\" --fix"
+    "stylelint:fix": "stylelint \"**/*.{css,scss,vue}\" --fix",
+    "format:fix": "prettier --write . --log-level warn",
+		"format": "prettier --check . --log-level warn",
+    "typecheck": "vue-tsc --noEmit",
+    "circular": "npx dpdm --exit-code circular:1 --no-tree --no-warning --progress false --transform \"./src/main.tsx\"",
+		"deadcode": "knip --exclude binaries,dependencies,unlisted",
+    "check": "run-p typecheck lint format stylelint circular deadcode"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
