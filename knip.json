@@ -1,5 +1,5 @@
 {
-	"ignore": ["prettier.config.js"],
+	"ignore": ["prettier.config.js", "openapi-ts.config.ts"],
 	"entry": ["src/main.ts"],
 	"project": ["**/*.{js,ts,tsx,vue}"]
 }
