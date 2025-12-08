@@ -13,7 +13,7 @@ import { configs as tseslint } from "typescript-eslint";
 
 export default defineConfigWithVueTs(
 	{
-		ignores: ["**/*.d.ts", "dist", "node_modules", "src/shared/api/dit"],
+		ignores: ["**/*.d.ts", "dist", "node_modules", "src/shared/ui", "src/widgets/components", "src/shared/api/autogen"],
 	},
 	{ files: ["**/*.{js,mjs,cjs,ts,vue}"] },
 	tseslint.all,
@@ -33,6 +33,7 @@ export default defineConfigWithVueTs(
 			"@typescript-eslint/naming-convention": "warn",
 			"@typescript-eslint/no-magic-numbers": "off",
 			"@typescript-eslint/no-unsafe-argument": "warn",
+			"@typescript-eslint/prefer-readonly-parameter-types": "off",
 			"@typescript-eslint/restrict-template-expressions": [
 				"error",
 				{
@@ -48,7 +49,6 @@ export default defineConfigWithVueTs(
 			"unicorn/prefer-at": ["error", { checkAllIndexAccess: true }],
 			"unicorn/prefer-ternary": "off",
 			"unicorn/prevent-abbreviations": "off",
-			"vue/multi-word-component-names": "warn",
 		},
 		settings: {
 			"import/resolver": {
