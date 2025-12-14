@@ -11,13 +11,12 @@
 		"lint:fix": "eslint . --fix",
 		"stylelint": "stylelint \"**/*.{css,scss,vue}\" --quiet",
 		"stylelint:fix": "stylelint \"**/*.{css,scss,vue}\" --fix",
-		"format:fix": "prettier --write . --log-level warn",
-		"format": "prettier --check . --log-level warn",
-		"typecheck": "vue-tsc --noEmit",
+		"typecheck": "vue-tsc -b",
 		"circular": "dpdm --exit-code circular:1 --no-tree --no-warning --progress false --transform \"./src/main.ts\"",
 		"deadcode": "knip --exclude binaries,dependencies,unlisted",
-		"check": "run-p typecheck lint format stylelint circular deadcode",
-		"fix": "run-p lint:fix stylelint:fix format:fix"
+		"check": "run-p typecheck lint stylelint circular deadcode build",
+		"fix": "run-p lint:fix stylelint:fix",
+		"prepare": "husky"
 	},
 	"dependencies": {
 		"@tailwindcss/vite": "^4.1.18",
@@ -54,6 +53,7 @@
 		"eslint-plugin-security": "^3.0.1",
 		"eslint-plugin-unicorn": "^62.0.0",
 		"eslint-plugin-vue": "^10.6.2",
+		"husky": "^9.1.7",
 		"knip": "^5.73.4",
 		"npm-run-all": "^4.1.5",
 		"postcss-html": "^1.8.0",
