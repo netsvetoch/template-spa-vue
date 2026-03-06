@@ -11,11 +11,10 @@
 		"erasableSyntaxOnly": true,
 		"noFallthroughCasesInSwitch": true,
 		"noUncheckedSideEffectImports": true,
-		"baseUrl": ".",
 		"paths": {
-			"@/*": ["./src/*"]
-		}
+			"@/*": ["./src/*"],
+		},
 	},
 
-	"include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "eslint.config.ts"]
+	"include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "eslint.config.ts"],
 }
